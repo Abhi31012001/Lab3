@@ -1,0 +1,41 @@
+﻿@using Microsoft.AspNetCore.Http;
+
+@{ Layout = "_Layout";
+    ViewData["Title"] = "Count";
+    var i = @Context.Session.GetString("Bottle");
+    var b = Convert.ToInt32(i); }
+<form asp-action="Razor" method="post">
+    <input type="submit" value="Play Again" />
+</form>
+<br />
+<table>
+    <tr>
+
+        <td>
+            @for (var k = b; k > 0; k--)
+            {
+                int l = k - 1;
+                @if (l == 0)
+                {
+                    <p>
+                        1 green bottlee standing on the wall,<br />
+                        1 green bottlee standing on the wall,<br />
+                        And if one green bottle should accidentally fall,<br />
+                        There'll be no green bottle standing on the wall.<br /><br />
+                        There is no green bottle standing on the wall.
+
+
+                    </p>}
+                @if (l != 0)
+                {
+                    <p>
+                        @k green bottlees standing on the wall,<br>
+                        @k green bottlees standing on the wall,<br>
+                        And if one green bottle should accidentally fall,<br>
+                        There'll be @l green bottles standing on the wall.<br><br>
+                    </p>}}
+
+        </td>
+
+    </tr>
+</table>

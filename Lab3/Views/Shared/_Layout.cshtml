@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"]</title>
+    <link href="~/css/StyleSheet.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <h1 align="center">Hello Welcome to my Lab -3 of subject .NET</h1>
+        <h2 align="right">You are on Page - @ViewBag.title</h2>
+        Name - Patel Abhi
+        <br />
+        <br />
+        @Html.ActionLink("Hello World", "Index", "Home") &nbsp;
+
+        @Html.ActionLink("Show the song!", "Razor", "Home") &nbsp;
+        @Html.ActionLink("Persons", "CreatePerson", "Home") <br />
+
+    </header>
+    <div class="content">
+        @RenderBody()
+    </div>
+    <footer>
+        <b> 1. Short description of what layout does</b><br />
+        &nbsp;&nbsp; * Index which is the home page (Always open first)<br />
+        &nbsp;&nbsp; * Razor which Get the number of bottles from user and pass it in count page and display the lyrics to the children’s song<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For more info. <a href="https://en.wikipedia.org/wiki/Ten_Green_Bottles">Click Here!</a> &nbsp;<br />
+        &nbsp;&nbsp; * Create Person which collect the following information from the user and then irect the user to the DisplayPerson.cshtml and display it.<br />
+        <br />
+        <br />
+        <b>2. Why you put the files in those directories. E.g. CSS in directory x, and why. Layout in directory Y and why. Etc.</b><br />
+        &nbsp;&nbsp;<b>css in directory wwwroot</b><br />
+
+        &nbsp;&nbsp;&nbsp;&nbsp;    - By default, the wwwroot folder in the ASP.NET Core project is treated as a web root folder. Static files can be stored in any folder under the web root and accessed with a relative path to that root.<br />
+
+        &nbsp;&nbsp;&nbsp;&nbsp;   - In the standard ASP.NET application, static files can be served from the root folder of an application or any other folder under it. This has been changed in ASP.NET Core. Now, only those files that are in the<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;    web root - wwwroot folder can be served over an http request. All other files are blocked and cannot be served by default.<br />
+
+        &nbsp;&nbsp;&nbsp;&nbsp;  - Generally, there should be separate folders for the different types of static files such as JavaScript, CSS, Images, library scripts etc. in the wwwroot folder<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For more info. <a href="https://tattoocoder.com/wwwroot-folder-optional/">Click Here!</a> &nbsp;<br /><br />
+        &nbsp;&nbsp;<b>_Layout in directory Views/Shared</b><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;   The layout view has the same extension as other views, .cshtml or .vbhtml. Layout views are shared with multiple views, so it must be stored in the Shared folder. By default, a layout view _Layout.cshtml is<br /> &nbsp;&nbsp;&nbsp;&nbsp;  created when you Create MVC application using Visual Studio.<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For more info. <a href="https://www.tutorialsteacher.com/mvc/layout-view-in-asp.net-mvc">Click Here!</a> &nbsp;<br />
+        <b>3. You should not include the content of css or how you defined your css</b><br />
+        &nbsp;&nbsp; - We can define a CSS in wwwroot which help us to design your site by using background-color, border-bottom, margin, padding, font-family, border, and etc. We can apply this css on any file you want and also we can create more than one css.
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For more info. <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Organizing">Click Here!</a> &nbsp;<br />
+
+    </footer>
+</body>
+</html>
